@@ -5,6 +5,8 @@ param(
     [string]$AppName
 )
 
+Start-Transcript -path $LOGROOT\detect.ps1.log -append
+
 if ( $(whoami) -like "*system*" ) {
 
     Write-Host "Running as System"
