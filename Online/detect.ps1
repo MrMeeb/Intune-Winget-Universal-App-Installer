@@ -5,7 +5,7 @@ param(
     [string]$AppName
 )
 
-Start-Transcript -path $LOGROOT\detect.ps1.log -append
+Start-Transcript -path $LOGROOT\detect-online.ps1.log -append
 
 if ( $(whoami) -like "*system*" ) {
 
