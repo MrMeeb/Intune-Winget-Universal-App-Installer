@@ -2,7 +2,9 @@
 
 param(
     [Parameter(Mandatory)]
-    [string]$AppName
+    [string]$AppName,
+    [Parameter(Mandatory)]
+    [string]$LOGROOT    
 )
 
 Start-Transcript -path $LOGROOT\detect-online.ps1.log -append
