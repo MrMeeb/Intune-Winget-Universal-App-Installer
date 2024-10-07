@@ -1,10 +1,9 @@
 # Set logging dir
 
-$AppName = ''
-
-$LOGROOT="${env:ProgramFiles}\CAW\IntuneLogs\$AppName"
-
-Start-Transcript -path $LOGROOT\detect.ps1.log -append
+param(
+    [Parameter(Mandatory)]
+    [string]$AppName
+)
 
 if ( $(whoami) -like "*system*" ) {
 
