@@ -2,10 +2,10 @@
 
 param(
     [Parameter(Mandatory)]
-    [string]$AppName,
-    [Parameter(Mandatory)]
-    [string]$LOGROOT    
+    [string]$AppName
 )
+
+$LOGROOT="${env:ProgramFiles}\CAW\IntuneLogs\$AppName"
 
 Start-Transcript -path $LOGROOT\detect-online.ps1.log -append
 
