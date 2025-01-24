@@ -16,6 +16,8 @@ if ($ResolveWingetPath){
 		$WingetPath = $ResolveWingetPath[-1].Path
 }
 
+Write-Host $WingetPath
+
 if ($WingetPath.length -lt 10){
 	Write-Error -Message "Winget not found." -Category OperationStopped
 	exit
@@ -37,7 +39,6 @@ switch ($Action){
 		try {
 			Set-Location $WingetPath
 			.\winget.exe uninstall --exact --id $AppName --silent
-			.\winget.exe export --ignore-warnings --output $LOGROOT\$AppName.json
 		}
 		catch {
 			Write-Error -Message "Error happened during uninstallation." -Category OperationStopped
