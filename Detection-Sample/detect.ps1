@@ -1,4 +1,4 @@
-$AppName = ''
+$AppName = 'Obsidian.Obsidian'
 
 $LOGROOT="${env:ProgramFiles}\CAW\IntuneLogs\$AppName"
 
@@ -12,3 +12,5 @@ if ($LastExitCode -ne 0)
     Write-Output "An error occured in the child process"
     exit $LastExitCode
 }
+
+Stop-Transcript

@@ -45,3 +45,5 @@ switch ($Action){
     	}
 	}
 }
+
+Stop-Transcript
