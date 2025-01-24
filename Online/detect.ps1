@@ -5,10 +5,6 @@ param(
     [string]$AppName
 )
 
-$LOGROOT="${env:ProgramFiles}\CAW\IntuneLogs\$AppName"
-
-Start-Transcript -path $LOGROOT\detect-online.ps1.log -append
-
 if ( $(whoami) -like "*system*" ) {
 
     Write-Host "Running as System"
