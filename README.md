@@ -8,5 +8,5 @@ Uses the `IntuneWin32App` PS module for automatic intunewin creation and upload 
 
 Complete all fields in `create-app.ps1` before trying to upload an app.
 
-[!IMPORTANT]
-`IntuneWin32App` uses a since-retired authentication method for accessing Intune. This is easily overcome by creating your own App Registration and providing your own `ClientID`, as is laid out in `create-app.ps1`. See the comment on [MSEndpointMgr/ntuneWin32App#156](https://github.com/MSEndpointMgr/IntuneWin32App/issues/156#issuecomment-2190003235) for details on the permissions. The actual script modification is, in my experience, not required.
+> [!IMPORTANT]
+> `IntuneWin32App` uses a since-retired authentication method for accessing Intune. This is easily overcome by creating your own App Registration and providing your own `ClientID`, as is laid out in `create-app.ps1`. See the comment on [MSEndpointMgr/ntuneWin32App#156](https://github.com/MSEndpointMgr/IntuneWin32App/issues/156#issuecomment-2190003235) for details on the permissions. The actual script modification is, in my experience, not required.
