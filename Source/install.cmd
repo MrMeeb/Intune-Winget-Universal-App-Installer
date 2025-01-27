@@ -24,5 +24,5 @@ echo "App is %APP%"
 whoami
 icacls %LOGROOT% /grant:r "Users":F
 echo "Downloading install.ps1 script"
-Powershell.exe Invoke-Webrequest -uri https://raw.githubusercontent.com/MrMeeb/Intune-Winget-Universal-App-Installer/refs/heads/develop/Online/install.ps1 -outfile install.ps1
-Powershell.exe -ExecutionPolicy ByPass -File ".\install.ps1" "%ACTION%" "%APP%"
+Powershell.exe Invoke-Webrequest -uri https://raw.githubusercontent.com/MrMeeb/Intune-Winget-Universal-App-Installer/refs/heads/develop/Online/install.ps1 -outfile "%TEMP%\install-%APP%.ps1"
+Powershell.exe -ExecutionPolicy ByPass -File "%TEMP%\install-%APP%.ps1" "%ACTION%" "%APP%"
