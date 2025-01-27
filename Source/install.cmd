@@ -13,6 +13,27 @@ set APP=%2
 :: Make logging dir
 set LOGROOT="%ProgramFiles%\CAW\IntuneLogs\%2"
 if not exist %LOGROOT% mkdir %LOGROOT%
+echo:
+echo:
+echo:
+echo ________/\\\\\\\\\_____/\\\\\\\\\_____/\\\______________/\\\_        
+echo  _____/\\\////////____/\\\\\\\\\\\\\__\/\\\_____________\/\\\_       
+echo   ___/\\\/____________/\\\/////////\\\_\/\\\_____________\/\\\_      
+echo    __/\\\_____________\/\\\_______\/\\\_\//\\\____/\\\____/\\\__     
+echo     _\/\\\_____________\/\\\\\\\\\\\\\\\__\//\\\__/\\\\\__/\\\___    
+echo      _\//\\\____________\/\\\/////////\\\___\//\\\/\\\/\\\/\\\____   
+echo       __\///\\\__________\/\\\_______\/\\\____\//\\\\\\//\\\\\_____  
+echo        ____\////\\\\\\\\\_\/\\\_______\/\\\_____\//\\\__\//\\\______ 
+echo         _______\/////////__\///________\///_______\///____\///_______                                                               
+echo:
+echo:
+echo:
+if "%ACTION%" == "install" echo     Please wait while your app is installed...
+if "%ACTION%" == "uninstall" echo   Please wait while your app is uninstalled...
+echo:
+echo:
+echo:
+
 call :LOG > %LOGROOT%\install.cmd.log
 
 :: Halt script running after running the :LOG section
