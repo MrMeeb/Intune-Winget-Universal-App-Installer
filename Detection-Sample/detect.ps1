@@ -1,10 +1,14 @@
-$AppName = 'Obsidian.Obsidian'
+$AppName = 'Sample.Sample'
 
-$TEMP = [System.Environment]::GetEnvironmentVariable('TEMP','User')
-Write-Host $TEMP
 $LOGROOT="${env:ProgramFiles}\CAW\IntuneLogs\$AppName"
 
 Start-Transcript -path $LOGROOT\detect.ps1.log -append
+$TEMP = [System.Environment]::GetEnvironmentVariable('TEMP','User')
+
+if (-Not (Test-Path -Path $TEMP)) {
+    Write-Host "$TEMP not found. Creating"
+    New-Item -ItemType Directory -Force -Path $TEMP
+}
 
 Invoke-Webrequest -uri https://raw.githubusercontent.com/MrMeeb/Intune-Winget-Universal-App-Installer/refs/heads/develop/Online/detect.ps1 -outfile "$TEMP\detect-$AppName.ps1"
 powershell.exe -executionpolicy bypass "$TEMP\detect-$AppName.ps1" -AppName $AppName | Out-Host
